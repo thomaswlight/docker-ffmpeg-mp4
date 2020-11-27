@@ -13,5 +13,5 @@ COPY copy_output.sh /tmp/workdir
 
 RUN chmod +x ./copy_output.sh
 
-ENTRYPOINT ffmpeg -i ${INPUT_VIDEO_FILE_URL} -c:v libx264 -movflags +faststart -crf 25 -preset fast --tune film -y ${OUTPUT_FILE_NAME} && ./copy_output.sh
+ENTRYPOINT ffmpeg -i ${INPUT_VIDEO_FILE_URL} -y ${OUTPUT_FILE_NAME} && ./copy_output.sh
 #AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
